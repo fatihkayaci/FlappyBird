@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Block
+  - Zemin
+  - GameOver
+  - ZeminDestroy
+  - ScorPlus
+  - ScorText
+  - Blocks
+  - BirdDestroy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Scor
+  - Water
+  - UI
+  - Canvas
+  - Blocks
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: GameOver
+    uniqueID: 127481799
+    locked: 0
+  - name: Block
+    uniqueID: 3718527135
+    locked: 0
+  - name: Zemin
+    uniqueID: 1166817209
+    locked: 0
+  - name: Player
+    uniqueID: 3450113349
+    locked: 0
