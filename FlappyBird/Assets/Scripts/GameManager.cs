@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GamaManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public GameObject zemin;
     public GameObject gameOver;
@@ -12,11 +12,30 @@ public class GamaManager : MonoBehaviour
     public GameObject player;
     private bool hasStarted = false;
     float timeStart;
+
+    public static GameManager instance;
+    public int score = 0;
+    public Text scoreText;
+    public ScoreDisplay scoreDisplay;
     private void Awake()
     {
         blockManager.SetActive(false);
         gameOver.SetActive(false);
-        
+        // Singleton Pattern
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+
+    }
+    private void Start()
+    {
+        UpdateScoreText();
     }
     void Update()
     {
@@ -37,6 +56,7 @@ public class GamaManager : MonoBehaviour
             else
             {
                 gameOver.SetActive(true);
+                ResetScore();
             }
             blockManager.SetActive(false);
             Destroy(GameObject.FindGameObjectWithTag("Block"));
@@ -53,6 +73,23 @@ public class GamaManager : MonoBehaviour
         {
             Instantiate(zemin, new Vector2(transform.position.x, -4.6f), Quaternion.identity);
             timeStart = 0;
+        }
+    }
+    public void AddScore(int value)
+    {
+        score += value;
+        UpdateScoreText();
+    }
+    public void ResetScore()
+    {
+        score = 0;
+        UpdateScoreText();
+    }
+    void UpdateScoreText()
+    {
+        if (scoreDisplay != null)
+        {
+            scoreDisplay.UpdateScoreDisplay(score);
         }
     }
 }

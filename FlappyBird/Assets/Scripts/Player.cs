@@ -19,6 +19,10 @@ public class Player : MonoBehaviour
         {
             rbBirds.velocity = Vector2.up * speed;
         }
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            rbBirds.velocity = Vector2.up * speed;
+        }
 
         if (transform.position.y <= -4.05f)
         {

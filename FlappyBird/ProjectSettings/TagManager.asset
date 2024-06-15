@@ -64,3 +64,6 @@ TagManager:
   - name: Start
     uniqueID: 2536456885
     locked: 0
+  - name: Score
+    uniqueID: 3943866817
+    locked: 0
